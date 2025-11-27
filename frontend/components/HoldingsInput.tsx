@@ -77,14 +77,42 @@ export const HoldingsInput: React.FC<HoldingsInputProps> = ({ onSubmit, isLoadin
             const parsed = JSON.parse(jsonInput);
             if (!Array.isArray(parsed)) throw new Error("Input must be an array");
 
-            const totalWeight = parsed.reduce((sum: number, h: any) => sum + (h.weight || 0), 0);
+            // Helper to normalize keys
+            const normalize = (obj: any): any => {
+                const newObj: any = {};
+                Object.keys(obj).forEach(key => {
+                    const lower = key.toLowerCase().trim();
+                    if (['ticker', 'symbol', 'stock'].includes(lower)) {
+                        newObj.ticker = obj[key];
+                    } else if (['weight', 'allocation', 'value', 'weight %', 'weight%'].includes(lower)) {
+                        newObj.weight = obj[key];
+                    }
+                });
+                return newObj;
+            };
+
+            // Normalize and sanitize
+            const sanitized = parsed.map((h: any) => {
+                const normalized = normalize(h);
+                return {
+                    ticker: normalized.ticker || '',
+                    weight: Number(normalized.weight) || 0
+                };
+            }).filter(h => h.ticker && h.weight > 0); // Filter out invalid entries
+
+            if (sanitized.length === 0) {
+                setError("No valid holdings found. Please check your JSON keys (expected 'ticker' and 'weight').");
+                return;
+            }
+
+            const totalWeight = sanitized.reduce((sum: number, h: any) => sum + h.weight, 0);
             if (Math.abs(totalWeight - 100) > 1) {
-                setError(`Total weight is ${totalWeight}%, must be 100%`);
+                setError(`Total weight is ${totalWeight.toFixed(1)}%, must be 100%`);
                 return;
             }
 
             setError(null);
-            onSubmit(parsed);
+            onSubmit(sanitized);
         } catch (e) {
             setError("Invalid JSON format");
         }

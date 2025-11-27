@@ -106,34 +106,52 @@ export const Dashboard: React.FC<DashboardProps> = ({ data }) => {
                     <CardHeader>
                         <CardTitle className="font-serif text-primary">Sector Allocation</CardTitle>
                     </CardHeader>
-                    <CardContent className="h-[300px]">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <PieChart>
-                                <Pie
-                                    data={sectorData}
-                                    cx="50%"
-                                    cy="50%"
-                                    innerRadius={60}
-                                    outerRadius={80}
-                                    paddingAngle={5}
-                                    dataKey="value"
-                                    stroke="none"
-                                >
-                                    {sectorData.map((entry, index) => (
-                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                    ))}
-                                </Pie>
-                                <RechartsTooltip
-                                    contentStyle={{
-                                        backgroundColor: '#fff',
-                                        borderColor: '#e5e7eb',
-                                        borderRadius: '0.5rem',
-                                        color: '#1f2937'
-                                    }}
-                                    itemStyle={{ color: '#1f2937' }}
-                                />
-                            </PieChart>
-                        </ResponsiveContainer>
+                    <CardContent>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                            <div className="h-[300px]">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <PieChart>
+                                        <Pie
+                                            data={sectorData}
+                                            cx="50%"
+                                            cy="50%"
+                                            innerRadius={60}
+                                            outerRadius={80}
+                                            paddingAngle={5}
+                                            dataKey="value"
+                                            stroke="none"
+                                        >
+                                            {sectorData.map((entry, index) => (
+                                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                            ))}
+                                        </Pie>
+                                        <RechartsTooltip
+                                            contentStyle={{
+                                                backgroundColor: '#fff',
+                                                borderColor: '#e5e7eb',
+                                                borderRadius: '0.5rem',
+                                                color: '#1f2937'
+                                            }}
+                                            itemStyle={{ color: '#1f2937' }}
+                                        />
+                                    </PieChart>
+                                </ResponsiveContainer>
+                            </div>
+                            <div className="space-y-3 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                                {sectorData.sort((a, b) => b.value - a.value).map((entry, index) => (
+                                    <div key={index} className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <div className="flex items-center gap-3">
+                                            <div
+                                                className="w-3 h-3 rounded-full shadow-sm"
+                                                style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                                            />
+                                            <span className="text-sm font-medium text-gray-700">{entry.name}</span>
+                                        </div>
+                                        <span className="text-sm font-bold text-gray-900">{entry.value.toFixed(1)}%</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </CardContent>
                 </Card>
 

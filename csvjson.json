@@ -1,0 +1,102 @@
+[
+  {
+    "ticker": "AAPL",
+    "weight": 8
+  },
+  {
+    "ticker": "ACDVF",
+    "weight": 4
+  },
+  {
+    "ticker": "AMZN",
+    "weight": 5
+  },
+  {
+    "ticker": "APPS",
+    "weight": 2
+  },
+  {
+    "ticker": "CCL",
+    "weight": 4
+  },
+  {
+    "ticker": "CMG",
+    "weight": 5
+  },
+  {
+    "ticker": "FN",
+    "weight": 2
+  },
+  {
+    "ticker": "GLDD",
+    "weight": 6
+  },
+  {
+    "ticker": "GRND",
+    "weight": 3
+  },
+  {
+    "ticker": "HLLY",
+    "weight": 2
+  },
+  {
+    "ticker": "HOOD",
+    "weight": 3
+  },
+  {
+    "ticker": "LAZR",
+    "weight": 0
+  },
+  {
+    "ticker": "LRCX",
+    "weight": 2
+  },
+  {
+    "ticker": "META",
+    "weight": 14
+  },
+  {
+    "ticker": "MSFT",
+    "weight": 5
+  },
+  {
+    "ticker": "NKE",
+    "weight": 2
+  },
+  {
+    "ticker": "NVDA",
+    "weight": 10
+  },
+  {
+    "ticker": "PGY",
+    "weight": 3
+  },
+  {
+    "ticker": "PHR",
+    "weight": 2
+  },
+  {
+    "ticker": "PLTR",
+    "weight": 2
+  },
+  {
+    "ticker": "SHIP",
+    "weight": 2
+  },
+  {
+    "ticker": "SSRM",
+    "weight": 5
+  },
+  {
+    "ticker": "TEL",
+    "weight": 4
+  },
+  {
+    "ticker": "TMQ",
+    "weight": 1
+  },
+  {
+    "ticker": "VRT",
+    "weight": 4
+  }
+]

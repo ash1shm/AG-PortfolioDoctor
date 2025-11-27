@@ -1,5 +1,5 @@
 import * as React from "react"
-import { cn } from "@/lib/utils"
+import { cn } from "../../lib/utils"
 
 // Note: We haven't installed class-variance-authority or radix-ui/react-slot yet.
 // I should probably stick to a simpler implementation or install these.

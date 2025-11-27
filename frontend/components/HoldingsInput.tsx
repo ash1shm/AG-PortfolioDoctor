@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from './ui/Card';
 import { Button } from './ui/Button';
 import { Holding } from '../lib/types';
 import { Upload, Play, Plus, Trash2, FileJson, PieChart } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 interface HoldingsInputProps {
     onSubmit: (holdings: Holding[]) => void;

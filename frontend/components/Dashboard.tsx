@@ -6,7 +6,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip as RechartsTooltip } 
 import { RiskCard } from './RiskCard';
 import { CorrelationHeatmap } from './CorrelationHeatmap';
 import { SimulationChart } from './SimulationChart';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 interface DashboardProps {
     data: AnalysisResult;

@@ -1,0 +1,6 @@
+backend/
+api/
+*.py
+requirements.txt
+.pytest_cache/
+__pycache__/

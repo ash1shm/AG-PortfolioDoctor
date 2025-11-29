@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import analysis
+from .routes import analysis
 
 app = FastAPI(title="AI Portfolio Doctor")
 

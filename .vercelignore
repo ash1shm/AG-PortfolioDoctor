@@ -1,2 +1,18 @@
+# Test files
 .pytest_cache/
 __pycache__/
+backend/tests/
+backend/.pytest_cache/
+
+# Documentation
+*.md
+README*
+
+# Data files
+*.json
+*.csv
+
+# Development files
+.git/
+.vscode/
+.idea/

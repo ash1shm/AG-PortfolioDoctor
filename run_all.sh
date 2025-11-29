@@ -6,7 +6,7 @@
 echo "🚀 Starting AI Portfolio Doctor..."
 
 # Check if we're in the project root
-if [ ! -d "backend" ] || [ ! -d "frontend" ]; then
+if [ ! -d "backend" ]; then
     echo "❌ Error: Please run this script from the project root directory"
     exit 1
 fi
@@ -28,10 +28,8 @@ sleep 3
 
 # Start frontend
 echo "🎨 Starting frontend on port 3000..."
-cd frontend
 npm run dev &
 FRONTEND_PID=$!
-cd ..
 
 echo ""
 echo "✅ AI Portfolio Doctor is running!"

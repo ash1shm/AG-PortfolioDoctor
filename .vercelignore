@@ -8,8 +8,8 @@ backend/.pytest_cache/
 *.md
 README*
 
-# Data files
-*.json
+# Data files (but keep package.json and tsconfig.json)
+csvjson.json
 *.csv
 
 # Development files

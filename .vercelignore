@@ -1,8 +1,10 @@
-# Test files
-.pytest_cache/
+# Backend (Deployed on Render)
+backend/
+api/
+requirements.txt
+*.py
 __pycache__/
-backend/tests/
-backend/.pytest_cache/
+.pytest_cache/
 
 # Documentation
 *.md
